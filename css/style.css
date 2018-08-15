@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	background-color: #514D74;
+	font-family: 'Raleway', sans-serif;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 15px auto;
+	width: 100%;
+	text-align: center;
+	padding: 2%;
+	background-color: #171339;
+	height: 800px;
+}
+
+h1 {
+  color: #ecf0f1;
+
+}
+
+h1 + p {
+	margin-bottom: 5%;
+  color: #3498db;
+}
+
+.scorebox {
+  float: left;
+}
+.timebox {
+  float: right;
+}
+
+.outerbox:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.bg {
+	background-color: #F5F223;
+}
+
+button {
+  border: none;
+  background-color: #FF7373;
+  box-shadow: 0px 5px 0px 0px #CE4646;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.scorebox p, .scorebox span, .timebox p, .timebox span {
+  font-size: 30px;
+  color: #FF7373;
+}
+
+.wordsbox {
+	margin-top: 50px;
+}
+
+.words{
+  font-size: 60px;
+  letter-spacing: 1px;
+  color: white;
+
+}
+
+.leaderboard img{
+  height: 250px;
+}
