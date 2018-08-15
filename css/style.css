@@ -69,7 +69,7 @@ button:active {
   box-shadow: 0px 1px 0px 0px;
 }
 
-.scorebox p, .scorebox span, .timebox p, .timebox span {
+.scorebox p, .scorebox span, .timebox p, .timebox span, #result {
   font-size: 30px;
   color: #FF7373;
 }
@@ -78,12 +78,14 @@ button:active {
 	margin-top: 50px;
 }
 
-.words{
+.words, .announce{
   font-size: 60px;
   letter-spacing: 1px;
   color: white;
 
 }
+
+
 
 .leaderboard img{
   height: 250px;
