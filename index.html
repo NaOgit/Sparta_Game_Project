@@ -2,27 +2,35 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Type your word!</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" charset="utf-8"></script>
+    <title>Play</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/1.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="container">
-      <h1 align="center">TYPE YOUR WORDS!</h1>
-      <div class="buttons">
-        <a href="pages/1.html">
-          <button id="play" type="button" name="button">Play</button></a>
-          <button type="button" name="button">Instruction</button>
-      </div>
-      <div class="leaderboard">
-        <a href="pages/leaderboard.html">
-          <img src="images/trophy.png" alt=""></a>
-          <h1>leaderboard</h1>
-          <span>
-          <ol class="leaderScores"></ol></span>
-      </div>
-    </div>
-
+  <div class="container">
+		<h1></h1>
+		<div class="outerbox">
+			<div class="scorebox">
+				<p>Score</p>
+        <p id="result">0</p>
+				<span class="score">0</span>
+			</div>
+			<div class="timebox">
+				<p>Time left</p>
+				<span class="time">140</span>
+			</div>
+		</div>
+		<div class="wordsbox">
+      <span class="announce"></span>
+			<span class="words">
+      </span>
+		</div>
+	</div>
   </body>
 </html>

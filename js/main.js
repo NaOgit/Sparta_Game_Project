@@ -5,7 +5,6 @@ $(function() {
   var displayWord = random();
   var currentScore = 0;
   var seconds = 140;
-  var playTime = 60;
   var player = true;
   var time = countdown();
 
@@ -19,7 +18,7 @@ $(function() {
       if (seconds === 80) {
         // Player1's turn
         if (player = true) {
-        //once timer reached 70, send alert
+        //once timer reached 80, announce
         $(".announce").html("Player1, Your score is " + currentScore);
         //Store Player1's score in localStorage
         localStorage.setItem("score1", currentScore);
@@ -51,7 +50,6 @@ $(function() {
         //Store Player2's score in storage
         localStorage.setItem("score2", currentScore);
         var storedScore1 = localStorage.getItem("score2");
-        console.log(storedScore1);
       }
       if (seconds === 5) {
         //Get storedScore
@@ -65,7 +63,7 @@ $(function() {
           $(".announce").html("Player1 is the winner!");
         }
         if (localStorage.getItem("score2") == localStorage.getItem("score1")) {
-          $(".announce").html("It's a draw");
+          $(".announce").html("It's a draw!");
         }
       }
       //Clear countdown
@@ -138,5 +136,4 @@ $(function() {
       currentLetterId = 0;
     }
   });
-
 });
