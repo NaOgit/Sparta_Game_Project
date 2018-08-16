@@ -137,17 +137,4 @@ $(function() {
       currentLetterId = 0;
     }
   });
-
-  // function playGame() {
-  //   countdown();
-  //   random();
-  //   $(".words").html(displayWord);
-  //   getArray(word);
-  //   formatWord();
-  //   $(".words").html(formatWord());
-  //   var currentLetterId = 0;
-  // }
-
-
-
 });
