@@ -50,7 +50,6 @@ $(function() {
         //Store Player2's score in storage
         localStorage.setItem("score2", currentScore);
         var storedScore1 = localStorage.getItem("score2");
-        console.log(storedScore1);
       }
       if (seconds === 5) {
         //Get storedScore
@@ -137,17 +136,4 @@ $(function() {
       currentLetterId = 0;
     }
   });
-
-  // function playGame() {
-  //   countdown();
-  //   random();
-  //   $(".words").html(displayWord);
-  //   getArray(word);
-  //   formatWord();
-  //   $(".words").html(formatWord());
-  //   var currentLetterId = 0;
-  // }
-
-
-
 });
