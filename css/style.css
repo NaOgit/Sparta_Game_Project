@@ -85,8 +85,22 @@ button:active {
 
 }
 
-
-
 .leaderboard img{
   height: 250px;
+}
+
+#leaderboard {
+  text-align: center;
+  color: white;
+  /* margin-left: 500px; */
+  margin-top: 30px;
+}
+
+table {
+  border: 1px solid white;
+  border-radius: 20%;
+  padding: 18px 18px;
+  margin-left: 500px;
+  margin-top: 10px;
+
 }
