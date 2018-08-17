@@ -91,6 +91,7 @@ $(function() {
         $("#leaderboard").append("<a href='pages/1.html'><button>Home</button></a>");
         $(".time").html("");
         $(".score").html("");
+        $(".disp").html("");
         $(".playerScore").html("");
         clearInterval(timer);
       }

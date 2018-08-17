@@ -6,7 +6,7 @@
 }
 
 body {
-	background-color: #514D74;
+	background-color: #231623;
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -16,7 +16,9 @@ body {
 	width: 100%;
 	text-align: center;
 	padding: 2%;
-	background-color: #171339;
+  background-image: url(../images/bg1.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 	height: 800px;
 }
 
@@ -24,14 +26,14 @@ body {
   margin-top: 120px;
 }
 h1 {
-  color: #ecf0f1;
+  color: #231623;
   font-size: 100px;
 
 }
 
 h1 + p {
 	margin-bottom: 5%;
-  color: #3498db;
+  color: #231623;
 }
 
 .scorebox {
@@ -48,13 +50,13 @@ h1 + p {
 }
 
 .bg {
-	background-color: #F5F223;
+	background-color: #37C171;
 }
 
 button {
   border: none;
-  background-color: #FF7373;
-  box-shadow: 0px 5px 0px 0px #CE4646;
+  background-color: #BE76C4;
+  box-shadow: 0px 5px 0px 0px #7A3D7F;
   outline: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -78,7 +80,7 @@ button:active {
 
 .scorebox p, .scorebox span, .timebox p, .timebox span, #result {
   font-size: 30px;
-  color: #FF7373;
+  color: #D84738;
 }
 
 .wordsbox {
@@ -88,22 +90,21 @@ button:active {
 .words, .announce{
   font-size: 60px;
   letter-spacing: 1px;
-  color: white;
+  color: #231623;
 }
 
 .leaderboard img{
-  height: 250px;
+  height: 450px;
 }
 
 #leaderboard {
   text-align: center;
-  color: white;
-  /* margin-left: 500px; */
+  color: #231623;
   margin-top: 30px;
 }
 
 table {
-  border: 1px solid white;
+  border: 1px solid purple;
   border-radius: 20%;
   padding: 18px 18px;
   margin: 20px auto;
@@ -113,11 +114,11 @@ table {
 
 .instruction {
   font-size: 30px;
-  color: #3498db;
+  color: #BE76C4;
 }
 
 img {
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
   height: 400px;
 }
