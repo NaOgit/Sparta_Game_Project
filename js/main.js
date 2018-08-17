@@ -77,6 +77,10 @@ $(function() {
         }
         if (localStorage.getItem("score2") == localStorage.getItem("score1")) {
           $(".announce").html("It's a draw!");
+          winner = "Player1";
+          loser = "Player2";
+          highScore = localStorage.getItem("score1");
+          lowScore = localStorage.getItem("score2");
         }
       }
       //Clear countdown
