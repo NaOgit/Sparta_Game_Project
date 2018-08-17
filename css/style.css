@@ -20,8 +20,12 @@ body {
 	height: 800px;
 }
 
+.title h1{
+  margin-top: 120px;
+}
 h1 {
   color: #ecf0f1;
+  font-size: 100px;
 
 }
 
@@ -55,12 +59,15 @@ button {
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 22px;
-  text-decoration: none;
-  margin: 20px;
+  margin: 20px auto;
   color: #fff;
   position: relative;
-  display: inline-block;
+  display: block;
   cursor: pointer;
+}
+
+a{
+  text-decoration: none;
 }
 
 button:active {
@@ -82,7 +89,6 @@ button:active {
   font-size: 60px;
   letter-spacing: 1px;
   color: white;
-
 }
 
 .leaderboard img{
@@ -100,7 +106,18 @@ table {
   border: 1px solid white;
   border-radius: 20%;
   padding: 18px 18px;
-  margin-left: 500px;
-  margin-top: 10px;
+  margin: 20px auto;
 
+  font-size: 25px;
+}
+
+.instruction {
+  font-size: 30px;
+  color: #3498db;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  height: 400px;
 }

@@ -77,13 +77,18 @@ $(function() {
         }
         if (localStorage.getItem("score2") == localStorage.getItem("score1")) {
           $(".announce").html("It's a draw!");
+          winner = "Player1";
+          loser = "Player2";
+          highScore = localStorage.getItem("score1");
+          lowScore = localStorage.getItem("score2");
         }
       }
       //Clear countdown
       if (seconds === 0) {
         $("#leaderboard").append("<h2>LEADERBOARD</h2>")
         $("#leaderboard").append("<table align='center'><th>player</th><th>score</th><tr><td>"+winner+"</td><td>"+highScore+"</td></tr><tr><td>"+loser+"</td><td>"+lowScore+"</td></tr></table>");
-        $("#leaderboard").append("<button>Restart</button>");
+        $("#leaderboard").append("<a href='index.html'><button>Restart</button></a>");
+        $("#leaderboard").append("<a href='pages/1.html'><button>Home</button></a>");
         $(".time").html("");
         $(".score").html("");
         $(".playerScore").html("");
@@ -91,7 +96,8 @@ $(function() {
       }
     }, 1000);
   }
-  
+
+
   //Generate random words from array
   function random() {
     $(".words").html("");
