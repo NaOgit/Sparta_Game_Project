@@ -13,8 +13,8 @@ $(function() {
   var highScore;
   var lowScore;
 
-  var titleAudio1 = new Audio("audio/funnysong.mp3")
-  var winAudio = new Audio("audio/clapping.mp3")
+  var titleAudio1 = new Audio("audio/funnysong.mp3");
+  var winAudio = new Audio("audio/clapping.mp3");
   //Play title audio
   function audioPlay1() {
     titleAudio1.play();

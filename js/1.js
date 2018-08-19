@@ -14,13 +14,15 @@ $(function() {
   var highScore;
   var lowScore;
 
-  var titleAudio1 = new Audio("../audio/funnysong.mp3")
-  var wrong = new Audio("../audio/wrong.mp3")
+  var titleAudio1 = new Audio("../audio/funnysong.mp3");
+  var winAudio = new Audio("audio/clapping.mp3");
   //Play title audio
   function audioPlay1() {
     titleAudio1.play();
   }
-
+  function clapping() {
+    winAudio.play();
+  }
   var seconds1 = 10;
   var myVar = setInterval(myTimer, 1000);
 
@@ -91,6 +93,8 @@ $(function() {
         if (localStorage.getItem("score2") > localStorage.getItem("score1")) {
           $(".words").html("");
           $(".announce").html("Player2 is the winner!");
+          $(".outerbox").addClass("winbg");
+          clapping();
           winner = "Player2";
           loser = "Player1";
           highScore = localStorage.getItem("score2");
@@ -99,6 +103,8 @@ $(function() {
         //If score1 is higher than score2, announce Player1 as winner
         if (localStorage.getItem("score1")> localStorage.getItem("score2")) {
           $(".announce").html("Player1 is the winner!");
+          $(".outerbox").addClass("winbg");
+          clapping();
           winner = "Player1";
           loser = "Player2";
           highScore = localStorage.getItem("score1");
