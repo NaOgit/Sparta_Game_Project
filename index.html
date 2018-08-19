@@ -2,21 +2,34 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Type your word!</title>
+    <title>Play</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <script
+    src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/1.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container">
-      <h1 align="center">TYPE YOUR WORDS!</h1>
-      <div class="buttons">
-        <a href="pages/1.html">
-          <button id="play" type="button" name="button">Play</button></a>
-          <button type="button" name="button">Options</button>
+      <div class="outerbox">
+        <div class="scorebox">
+          <p class="disp">Score</p>
+          <p class="playerScore">0</p>
+          <span class="score">0</span>
+        </div>
+        <div class="timebox">
+          <p class="disp">Time left</p>
+          <span class="time">40</span>
+        </div>
+      </div>
+      <div class="wordsbox">
+        <span class="announce"></span>
+        <span class="words"></span>
       </div>
       <div class="leaderboard">
-        <a href="pages/leaderboard.html">
-          <img src="images/trophy.png" alt=""></a>
+        <div id="leaderboard">
+        </div>
       </div>
     </div>
   </body>
