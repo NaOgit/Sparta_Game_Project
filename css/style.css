@@ -57,6 +57,10 @@ h1 + p {
   background-color: #DB200C;
 }
 
+.winbg {
+  background-image: url(../images/cofetii.gif);
+}
+
 button {
   border: none;
   background-color: #BE76C4;
@@ -82,7 +86,7 @@ button:active {
   box-shadow: 0px 1px 0px 0px;
 }
 
-.scorebox p, .scorebox span, .timebox p, .timebox span, #result {
+.scorebox p, .scorebox span, .timebox p, .timebox span {
   font-size: 30px;
   color: #D84738;
 }
@@ -112,7 +116,7 @@ table {
   border-radius: 20%;
   padding: 18px 18px;
   margin: 20px auto;
-
+  back
   font-size: 25px;
 }
 
