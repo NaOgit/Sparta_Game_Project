@@ -1,7 +1,7 @@
 $(document).ready(function(){
   function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
-}
+  }
   window.onclick = function(event) {
     myFunction();
     if (!event.target.matches('.dropbtn')) {
