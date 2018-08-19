@@ -94,7 +94,7 @@ button:active {
 }
 
 .leaderboard img{
-  height: 450px;
+  height: 420px;
 }
 
 #leaderboard {
@@ -119,6 +119,6 @@ table {
 
 img {
   display: block;
-  margin: 10px auto;
+  margin: 5px auto;
   height: 400px;
 }

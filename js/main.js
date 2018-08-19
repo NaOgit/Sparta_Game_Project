@@ -1,6 +1,6 @@
 $(function() {
   // Words array
-  var gameWrds = ["Allegation", "Idiosyncritic", "Magnanimous" , "Perfunctory", "Paradox", "Tiresome", "Inadequate", "Jargon", "Appraised", "Reprehensible", "Outrageous", "Atrocious", "Scandalous", "Virtuous", "Dazzling", "Unimpeachable","Unassailed", "Insusceptible", "Vulnerable", "Unparagoned", "Conspicuous", "Perfidiousness", "Aggression", "Hypothesis", "Exasperation", "Reincarnation", "Unpredictable", "Parameter", "Mediocre", "Frivolous", "Hippopotamus", "Comprehensive", "Blasphemy", "Psychological", "Sesquipedalian", "Genocide", "Harmony", "Exaggeration", "Jabot", "Circumvallate", "Effulgent", "Ineffable", "Fulguration", "Greensward", "Horripilation", "Lachrymal", "Empyrean", "Crapulent", "Coruscate", "Evanescent", "Fuliginous", "Hymeneal", "Perficious", "Plangent", "Prothalamium", "Suserration", "Temerarious", "Viridescent", "Zephyr", "Hypocrite", "Palaeontology", "Lizard", "Waterfront", "Dysfunctional", "Tautology", "Knowledgeable", "Solemnly", "Sincerity", "Mathematical", "Complication", "Sophisticated", "Elaborate", "Labyrinth", "Enigmatic", "Perplexing", "Impenetrable", "Undecipherable", "Unfathomable", "Explicable", "Convoluted", "Delusional", "Patriarchy", "Ambiguous", "Cabalistic", "Mystifying", "Profound", "Pondering", "Bewilder", "Abysmal", "Illimitable", "Illusion", "Imagination", "Uninterupted", "Immemrial", "Indestructible", "Imperishable", "Unconventional", "Civilisation", "Flux", "Fluidity", "Irregularity", "Integrity", "Honourable", "Unification", "Amalgamation", "Concoction", "Fabrication", "Falsification", "Manipulation", "Unscrupulous", "Exploitative", "Untrustworthy", "Villainous", "Nefarious", "Contemptible", "Heinous", "Nausiating", "Sickening", "Revolting", "Objectionable", "Repugnant", "Obnoxious", "Delightful", "Abomination"];
+  var gameWrds = ["Allegation", "Idiosyncritic", "Magnanimous" , "Perfunctory", "Paradox", "Tiresome", "Inadequate", "Jargon", "Appraised", "Reprehensible", "Outrageous", "Atrocious", "Scandalous", "Virtuous", "Dazzling", "Unimpeachable","Unassailed", "Insusceptible", "Vulnerable", "Unparagoned", "Conspicuous", "Perfidiousness", "Aggression", "Hypothesis", "Exasperation", "Reincarnation", "Unpredictable", "Parameter", "Mediocre", "Frivolous", "Hippopotamus", "Comprehensive", "Blasphemy", "Psychological", "Sesquipedalian", "Genocide", "Harmony", "Exaggeration", "Jabot", "Circumvallate", "Effulgent", "Ineffable", "Fulguration", "Greensward", "Horripilation", "Lachrymal", "Empyrean", "Crapulent", "Coruscate", "Evanescent", "Fuliginous", "Hymeneal", "Perficious", "Plangent", "Prothalamium", "Suserration", "Temerarious", "Viridescent", "Zephyr", "Hypocrite", "Palaeontology", "Lizard", "Waterfront", "Dysfunctional", "Tautology", "Knowledgeable", "Solemnly", "Sincerity", "Mathematical", "Complication", "Sophisticated", "Elaborate", "Labyrinth", "Enigmatic", "Perplexing", "Impenetrable", "Undecipherable", "Unfathomable", "Explicable", "Convoluted", "Delusional", "Patriarchy", "Ambiguous", "Cabalistic", "Mystifying", "Profound", "Pondering", "Bewilder", "Abysmal", "Illimitable", "Illusion", "Imagination", "Uninterupted", "Immemorial", "Indestructible", "Imperishable", "Unconventional", "Civilisation", "Flux", "Fluidity", "Irregularity", "Integrity", "Honourable", "Unification", "Amalgamation", "Concoction", "Fabrication", "Falsification", "Manipulation", "Unscrupulous", "Exploitative", "Untrustworthy", "Villainous", "Nefarious", "Contemptible", "Heinous", "Nausiating", "Sickening", "Revolting", "Objectionable", "Repugnant", "Obnoxious", "Delightful", "Abomination"];
   // declaring global variables
   var displayWord = random();
   var currentScore = 0;
@@ -23,6 +23,8 @@ $(function() {
   function wrongEffect() {
     wrong.play();
   }
+  
+  //Start game
   function countdown() {
     currentScore = 0;
     //setting time interval for gameplay
@@ -31,10 +33,14 @@ $(function() {
       seconds--;
       audioPlay1();
       $(".time").html(seconds);
+      if (seconds == 39) {
+        $(".header").html("Player 1");
+      }
       if (seconds === 30) {
         // Player1's turn
         if (player = true) {
           //once timer reached 80, announce
+          $(".header").html("");
           $(".announce").html("Player1, Your score is " + currentScore);
           //Store Player1's score in localStorage
           localStorage.setItem("score1", currentScore);
@@ -52,6 +58,7 @@ $(function() {
       if (seconds === 20) {
         //Clear string
         $(".announce").html("");
+        $(".header").html("Player 2");
         //Reset score for Player2
         currentScore = 0;
         $(".words").html(displayWord);
@@ -62,6 +69,7 @@ $(function() {
       }
       if (seconds === 10) {
         $(".words").html("");
+        $(".header").html("");
         $(".announce").html("Player2, Your score is " + currentScore);
         //Store Player2's score in storage
         localStorage.setItem("score2", currentScore);
@@ -99,6 +107,7 @@ $(function() {
         $("#leaderboard").append("<h2>LEADERBOARD</h2>")
         $("#leaderboard").append("<table align='center'><th>player</th><th>score</th><tr><td>"+winner+"</td><td>"+highScore+"</td></tr><tr><td>"+loser+"</td><td>"+lowScore+"</td></tr></table>");
         $("#leaderboard").append("<a href='index.html'><button>Restart</button></a>");
+        $("#leaderboard").append("<a href='pages/3.html'><button>Easy</button></a>");
         $("#leaderboard").append("<a href='pages/1.html'><button>Home</button></a>");
         $(".time").html("");
         $(".score").html("");
