@@ -23,10 +23,9 @@ $(function() {
     winAudio.play();
   }
 
-
   var seconds1 = 10;
   var myVar = setInterval(myTimer, 1000);
-
+  //Game interval
   function myTimer() {
   	seconds1--;
     $(".time").html(seconds1);
