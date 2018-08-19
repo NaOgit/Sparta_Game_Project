@@ -1,7 +1,7 @@
 $(function() {
-  //Words array
-  var gameWrds = ["Allegation", "Idiosyncritic", "Magnanimous" , "Perfunctory", "Paradox", "Tiresome", "Inadequate", "Jargon", "Appraised", "Reprehensible", "Outrageous", "Atrocious", "Scandalous", "Virtuous", "Dazzling", "Unimpeachable","Unassailed", "Insusceptible", "Vulnerable", "Unparagoned", "Conspicuous", "Perfidiousness", "Aggression", "Hypothesis", "Exasperation", "Reincarnation", "Unpredictable", "Parameter", "Mediocre", "Frivolous", "Hippopotamus", "Comprehensive", "Blasphemy", "Psychological", "Sesquipedalian", "Genocide", "Harmony", "Exaggeration", "Jabot", "Circumvallate", "Effulgent", "Ineffable", "Fulguration", "Greensward", "Horripilation", "Lachrymal", "Empyrean", "Crapulent", "Coruscate", "Evanescent", "Fuliginous", "Hymeneal", "Perficious", "Plangent", "Prothalamium", "Suserration", "Temerarious", "Viridescent", "Zephyr", "Hypocrite", "Palaeontology", "Lizard", "Waterfront", "Dysfunctional", "Tautology", "Knowledgeable"];
-  //declaring global variables
+  // Words array
+  var gameWrds = ["Allegation", "Idiosyncritic", "Magnanimous" , "Perfunctory", "Paradox", "Tiresome", "Inadequate", "Jargon", "Appraised", "Reprehensible", "Outrageous", "Atrocious", "Scandalous", "Virtuous", "Dazzling", "Unimpeachable","Unassailed", "Insusceptible", "Vulnerable", "Unparagoned", "Conspicuous", "Perfidiousness", "Aggression", "Hypothesis", "Exasperation", "Reincarnation", "Unpredictable", "Parameter", "Mediocre", "Frivolous", "Hippopotamus", "Comprehensive", "Blasphemy", "Psychological", "Sesquipedalian", "Genocide", "Harmony", "Exaggeration", "Jabot", "Circumvallate", "Effulgent", "Ineffable", "Fulguration", "Greensward", "Horripilation", "Lachrymal", "Empyrean", "Crapulent", "Coruscate", "Evanescent", "Fuliginous", "Hymeneal", "Perficious", "Plangent", "Prothalamium", "Suserration", "Temerarious", "Viridescent", "Zephyr", "Hypocrite", "Palaeontology", "Lizard", "Waterfront", "Dysfunctional", "Tautology", "Knowledgeable", "Solemnly", "Sincerity", "Mathematical", ""];
+  // declaring global variables
   var displayWord = random();
   var currentScore = 0;
   var seconds = 40;
@@ -13,12 +13,23 @@ $(function() {
   var highScore;
   var lowScore;
 
+  var titleAudio1 = new Audio("audio/funnysong.mp3")
+  var wrong = new Audio("audio/wrong.mp3")
+  //Play title audio
+  function audioPlay1() {
+    titleAudio1.play();
+  }
+  //Play wrong sound effect
+  function wrongEffect() {
+    wrong.play();
+  }
   function countdown() {
     currentScore = 0;
     //setting time interval for gameplay
     var timer = setInterval(function(){
       //counting down
       seconds--;
+      audioPlay1();
       $(".time").html(seconds);
       if (seconds === 30) {
         // Player1's turn
@@ -152,8 +163,9 @@ $(function() {
       currentLetterId++;
     } else {
       currentLetter.removeClass("bg");
+      wrongEffect();
     }
-    //Once all letters are typedup correctly, reset and display new word
+    //Once all letters are typed up correctly, reset and display new word
     if (currentLetterId==displayWord.length ) {
       displayWord = random(); //Getting new word
       $(".words").html(displayWord.toUpperCase());
