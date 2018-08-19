@@ -24,7 +24,7 @@ $(function() {
   function wrongEffect() {
     wrong.play();
   }
-  
+
   //Start game
   function countdown() {
     currentScore = 0;
@@ -108,8 +108,7 @@ $(function() {
         $("#leaderboard").append("<h2>LEADERBOARD</h2>")
         $("#leaderboard").append("<table align='center'><th>player</th><th>score</th><tr><td>"+winner+"</td><td>"+highScore+"</td></tr><tr><td>"+loser+"</td><td>"+lowScore+"</td></tr></table>");
         $("#leaderboard").append("<a href='index.html'><button>Restart</button></a>");
-        $("#leaderboard").append("<a href='../index.html'><button>Hard</button></a>");
-        $("#leaderboard").append("<a href='pages/1.html'><button>Home</button></a>");
+        $("#leaderboard").append("<a href='1.html'><button>Home</button></a>");
         $(".time").html("");
         $(".score").html("");
         $(".disp").html("");
