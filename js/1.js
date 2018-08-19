@@ -20,9 +20,16 @@ $(function() {
   function audioPlay1() {
     titleAudio1.play();
   }
-  //Play wrong sound effect
-  function wrongEffect() {
-    wrong.play();
+
+  var seconds1 = 10;
+  var myVar = setInterval(myTimer, 1000);
+
+  function myTimer() {
+  	seconds1--;
+    $(".time").html(seconds1);
+      if(seconds1 <=0){
+     	  clearInterval(myVar);
+    }
   }
 
   //Start game
@@ -33,7 +40,6 @@ $(function() {
       //counting down
       seconds--;
       audioPlay1();
-      $(".time").html(seconds);
       if (seconds == 39) {
         $(".header").html("Player 1");
       }
@@ -58,10 +64,13 @@ $(function() {
       }
       if (seconds === 20) {
         //Clear string
+        $(".time").html("10");
         $(".announce").html("");
         $(".header").html("Player 2");
         //Reset score for Player2
         currentScore = 0;
+        seconds1=10;
+        myVar = setInterval(myTimer, 1000);
         $(".words").html(displayWord);
         $(".words").html(displayWord.toUpperCase());
         $(".words").html(formatWord());
@@ -107,7 +116,7 @@ $(function() {
       if (seconds === 0) {
         $("#leaderboard").append("<h2>LEADERBOARD</h2>")
         $("#leaderboard").append("<table align='center'><th>player</th><th>score</th><tr><td>"+winner+"</td><td>"+highScore+"</td></tr><tr><td>"+loser+"</td><td>"+lowScore+"</td></tr></table>");
-        $("#leaderboard").append("<a href='index.html'><button>Restart</button></a>");
+        $("#leaderboard").append("<a href='3.html'><button>Restart</button></a>");
         $("#leaderboard").append("<a href='1.html'><button>Home</button></a>");
         $(".time").html("");
         $(".score").html("");
@@ -131,7 +140,7 @@ $(function() {
 
   //Split words down into letters
   function getArray(word){
-    myLetterArray = word.split("");
+    myLetterArray = word.split("").reverse();
     return myLetterArray;
   }
 
@@ -169,9 +178,10 @@ $(function() {
       currentScore++;
       $(".score").html(currentScore);
       currentLetterId++;
+      currentLetter.removeClass("wrongbg");
     } else {
       currentLetter.removeClass("bg");
-      wrongEffect();
+      currentLetter.addClass("wrongbg");
     }
     //Once all letters are typed up correctly, reset and display new word
     if (currentLetterId==displayWord.length ) {

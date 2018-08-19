@@ -53,6 +53,10 @@ h1 + p {
 	background-color: #37C171;
 }
 
+.wrongbg {
+  background-color: #DB200C;
+}
+
 button {
   border: none;
   background-color: #BE76C4;
