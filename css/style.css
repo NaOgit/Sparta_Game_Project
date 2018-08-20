@@ -25,10 +25,10 @@ body {
 .title h1{
   margin-top: 120px;
 }
+
 h1 {
   color: #231623;
   font-size: 100px;
-
 }
 
 h1 + p {
@@ -53,13 +53,21 @@ h1 + p {
 	background-color: #37C171;
 }
 
+.wrongbg {
+  background-color: #DB200C;
+}
+
+.winbg {
+  background-image: url(../images/cofetii.gif);
+}
+
 button {
   border: none;
   background-color: #BE76C4;
   box-shadow: 0px 5px 0px 0px #7A3D7F;
   outline: none;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 10px 50px;
   font-size: 22px;
   margin: 20px auto;
   color: #fff;
@@ -68,7 +76,7 @@ button {
   cursor: pointer;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -78,7 +86,7 @@ button:active {
   box-shadow: 0px 1px 0px 0px;
 }
 
-.scorebox p, .scorebox span, .timebox p, .timebox span, #result {
+.scorebox p, .scorebox span, .timebox p, .timebox span {
   font-size: 30px;
   color: #D84738;
 }
@@ -93,8 +101,8 @@ button:active {
   color: #231623;
 }
 
-.leaderboard img{
-  height: 450px;
+.decor img{
+  height: 380px;
 }
 
 #leaderboard {
@@ -108,17 +116,53 @@ table {
   border-radius: 20%;
   padding: 18px 18px;
   margin: 20px auto;
-
-  font-size: 25px;
+  font-size: 50px;
 }
 
 .instruction {
   font-size: 30px;
-  color: #BE76C4;
+  color: #5C1E5D;
 }
 
 img {
   display: block;
-  margin: 10px auto;
+  margin: 5px auto;
   height: 400px;
+}
+
+.dropbtn {
+    color: white;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: center absolute;
+    background-color: #BE76C4;
+    min-width: 120px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+  background-color: #7A3D7F;
+}
+
+.show {
+  display: block;
+  border-radius: 5px;
 }
