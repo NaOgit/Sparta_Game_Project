@@ -2,22 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Type your word!</title>
+    <title>TYPE UP!</title>
     <script src="../js/jquery-3.2.1.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../js/1.js"></script>
+    <script type="text/javascript" src="../js/2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container animated">
+      <!-- Autoplay music -->
       <audio src="../audio/funnysong.mp3" autoplay></audio>
-      <h1 class="title" align="center">TYPE UP!</h1>
-      <div class="buttons">
-        <a href="../index.html">
-          <button type="button" name="button">Play</button></a>
+      <h1 class="title animated fadeInDown" align="center">TYPE UP!</h1>
+      <div class="buttons animated fadeInDown">
+        <!-- Button link to instruction page -->
         <a href="2.html">
-          <button class="manual" type="button" name="button">Instruction</button></a>
+        <button class="manual" type="button" name="button">INSTRUCTION</button></a>
+        <!-- Dropdown menu for level of gameplay -->
+        <div class="dropdown">
+          <button onclick="" class="dropbtn">PLAY</button>
+            <div id="myDropdown" class="dropdown-content animated fadeInDown">
+              <a href="../index.html">Normal</a>
+              <a href="3.html">Reverse</a>
+            </div>
+        </div>
       </div>
-      <div class="leaderboard">
+      <div class="decor animated fadeInUp">
         <img src="../images/pony.gif" alt="">
       </div>
     </div>

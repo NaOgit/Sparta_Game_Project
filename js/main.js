@@ -1,6 +1,6 @@
 $(function() {
   // Words array
-  var gameWrds = ["Allegation", "Idiosyncritic", "Magnanimous" , "Perfunctory", "Paradox", "Tiresome", "Inadequate", "Jargon", "Appraised", "Reprehensible", "Outrageous", "Atrocious", "Scandalous", "Virtuous", "Dazzling", "Unimpeachable","Unassailed", "Insusceptible", "Vulnerable", "Unparagoned", "Conspicuous", "Perfidiousness", "Aggression", "Hypothesis", "Exasperation", "Reincarnation", "Unpredictable", "Parameter", "Mediocre", "Frivolous", "Hippopotamus", "Comprehensive", "Blasphemy", "Psychological", "Sesquipedalian", "Genocide", "Harmony", "Exaggeration", "Jabot", "Circumvallate", "Effulgent", "Ineffable", "Fulguration", "Greensward", "Horripilation", "Lachrymal", "Empyrean", "Crapulent", "Coruscate", "Evanescent", "Fuliginous", "Hymeneal", "Perficious", "Plangent", "Prothalamium", "Suserration", "Temerarious", "Viridescent", "Zephyr", "Hypocrite", "Palaeontology", "Lizard", "Waterfront", "Dysfunctional", "Tautology", "Knowledgeable", "Solemnly", "Sincerity", "Mathematical", "Complication", "Sophisticated", "Elaborate", "Labyrinth", "Enigmatic", "Perplexing", "Impenetrable", "Undecipherable", "Unfathomable", "Explicable", "Convoluted", "Delusional", "Patriarchy", "Ambiguous", "Cabalistic", "Mystifying", "Profound", "Pondering", "Bewilder", "Abysmal", "Illimitable", "Illusion", "Imagination", "Uninterupted", "Immemrial", "Indestructible", "Imperishable", "Unconventional", "Civilisation", "Flux", "Fluidity", "Irregularity", "Integrity", "Honourable", "Unification", "Amalgamation", "Concoction", "Fabrication", "Falsification", "Manipulation", "Unscrupulous", "Exploitative", "Untrustworthy", "Villainous", "Nefarious", "Contemptible", "Heinous", "Nausiating", "Sickening", "Revolting", "Objectionable", "Repugnant", "Obnoxious", "Delightful", "Abomination"];
+  var gameWrds = ["Allegation", "Idiosyncritic", "Magnanimous" , "Perfunctory", "Paradox", "Tiresome", "Inadequate", "Jargon", "Appraised", "Reprehensible", "Outrageous", "Atrocious", "Scandalous", "Virtuous", "Dazzling", "Unimpeachable","Unassailed", "Insusceptible", "Vulnerable", "Unparagoned", "Conspicuous", "Perfidiousness", "Aggression", "Hypothesis", "Exasperation", "Reincarnation", "Unpredictable", "Parameter", "Mediocre", "Frivolous", "Hippopotamus", "Comprehensive", "Blasphemy", "Psychological", "Sesquipedalian", "Genocide", "Harmony", "Exaggeration", "Jabot", "Circumvallate", "Effulgent", "Ineffable", "Fulguration", "Greensward", "Horripilation", "Lachrymal", "Empyrean", "Crapulent", "Coruscate", "Evanescent", "Fuliginous", "Hymeneal", "Perficious", "Plangent", "Prothalamium", "Suserration", "Temerarious", "Viridescent", "Zephyr", "Hypocrite", "Palaeontology", "Lizard", "Waterfront", "Dysfunctional", "Tautology", "Knowledgeable", "Solemnly", "Sincerity", "Mathematical", "Complication", "Sophisticated", "Elaborate", "Labyrinth", "Enigmatic", "Perplexing", "Impenetrable", "Undecipherable", "Unfathomable", "Explicable", "Convoluted", "Delusional", "Patriarchy", "Ambiguous", "Cabalistic", "Mystifying", "Profound", "Pondering", "Bewilder", "Abysmal", "Illimitable", "Illusion", "Imagination", "Uninterupted", "Immemorial", "Indestructible", "Imperishable", "Unconventional", "Civilisation", "Flux", "Fluidity", "Irregularity", "Integrity", "Honourable", "Unification", "Amalgamation", "Concoction", "Fabrication", "Falsification", "Manipulation", "Unscrupulous", "Exploitative", "Untrustworthy", "Villainous", "Nefarious", "Contemptible", "Heinous", "Nausiating", "Sickening", "Revolting", "Objectionable", "Repugnant", "Obnoxious", "Delightful", "Abomination", "Nattinan Oukongka"];
   // declaring global variables
   var displayWord = random();
   var currentScore = 0;
@@ -13,16 +13,27 @@ $(function() {
   var highScore;
   var lowScore;
 
-  var titleAudio1 = new Audio("audio/funnysong.mp3")
-  var wrong = new Audio("audio/wrong.mp3")
+  var titleAudio1 = new Audio("audio/funnysong.mp3");
+  var winAudio = new Audio("audio/clapping.mp3");
   //Play title audio
   function audioPlay1() {
     titleAudio1.play();
   }
-  //Play wrong sound effect
-  function wrongEffect() {
-    wrong.play();
+  function clapping() {
+    winAudio.play();
   }
+
+  var seconds1 = 10;
+  var myVar = setInterval(myTimer, 1000);
+  //Game interval
+  function myTimer() {
+    seconds1--;
+    $(".time").html(seconds1);
+    if(seconds1 <=0){
+      clearInterval(myVar);
+    }
+  }
+  //Start game
   function countdown() {
     currentScore = 0;
     //setting time interval for gameplay
@@ -30,11 +41,14 @@ $(function() {
       //counting down
       seconds--;
       audioPlay1();
-      $(".time").html(seconds);
+      if (seconds == 39) {
+        $(".header").html("Player 1");
+      }
       if (seconds === 30) {
         // Player1's turn
         if (player = true) {
           //once timer reached 80, announce
+          $(".header").html("");
           $(".announce").html("Player1, Your score is " + currentScore);
           //Store Player1's score in localStorage
           localStorage.setItem("score1", currentScore);
@@ -51,9 +65,13 @@ $(function() {
       }
       if (seconds === 20) {
         //Clear string
+        $(".time").html("10");
         $(".announce").html("");
+        $(".header").html("Player 2");
         //Reset score for Player2
         currentScore = 0;
+        seconds1=10;
+        myVar = setInterval(myTimer, 1000);
         $(".words").html(displayWord);
         $(".words").html(displayWord.toUpperCase());
         $(".words").html(formatWord());
@@ -62,6 +80,7 @@ $(function() {
       }
       if (seconds === 10) {
         $(".words").html("");
+        $(".header").html("");
         $(".announce").html("Player2, Your score is " + currentScore);
         //Store Player2's score in storage
         localStorage.setItem("score2", currentScore);
@@ -73,6 +92,8 @@ $(function() {
         if (localStorage.getItem("score2") > localStorage.getItem("score1")) {
           $(".words").html("");
           $(".announce").html("Player2 is the winner!");
+          $(".outerbox").addClass("winbg");
+          clapping();
           winner = "Player2";
           loser = "Player1";
           highScore = localStorage.getItem("score2");
@@ -81,6 +102,8 @@ $(function() {
         //If score1 is higher than score2, announce Player1 as winner
         if (localStorage.getItem("score1")> localStorage.getItem("score2")) {
           $(".announce").html("Player1 is the winner!");
+          $(".outerbox").addClass("winbg");
+          clapping();
           winner = "Player1";
           loser = "Player2";
           highScore = localStorage.getItem("score1");
@@ -104,6 +127,8 @@ $(function() {
         $(".score").html("");
         $(".disp").html("");
         $(".playerScore").html("");
+        $("#leaderboard").addClass("winbg");
+        clapping();
         clearInterval(timer);
       }
     }, 1000);
@@ -161,9 +186,10 @@ $(function() {
       currentScore++;
       $(".score").html(currentScore);
       currentLetterId++;
+      currentLetter.removeClass("wrongbg");
     } else {
       currentLetter.removeClass("bg");
-      wrongEffect();
+      currentLetter.addClass("wrongbg");
     }
     //Once all letters are typed up correctly, reset and display new word
     if (currentLetterId==displayWord.length ) {

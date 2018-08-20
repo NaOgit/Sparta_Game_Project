@@ -2,30 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Easy</title>
+    <title>Reverse</title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-    <script
-    src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="../js/1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <div class="container">
       <div class="outerbox">
+        <!-- To display score -->
         <div class="scorebox">
           <p class="disp">Score</p>
           <p class="playerScore">0</p>
           <span class="score">0</span>
         </div>
+        <!-- to display countdown -->
         <div class="timebox">
           <p class="disp">Time left</p>
-          <span class="time">40</span>
+          <span class="time">10</span>
         </div>
       </div>
-      <div class="wordsbox">
+      <!-- To display turn -->
+      <p class="header"></p>
+      <!-- To display word -->
+      <div class="wordsbox animated zoomIn">
         <span class="announce"></span>
         <span class="words"></span>
       </div>
+      <!-- To display scoreboard -->
       <div class="leaderboard">
         <div id="leaderboard">
         </div>
