@@ -27,10 +27,10 @@ $(function() {
   var myVar = setInterval(myTimer, 1000);
   //Game interval
   function myTimer() {
-  	seconds1--;
+    seconds1--;
     $(".time").html(seconds1);
-      if(seconds1 <=0){
-     	  clearInterval(myVar);
+    if(seconds1 <=0){
+      clearInterval(myVar);
     }
   }
   //Start game
