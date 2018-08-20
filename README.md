@@ -13,7 +13,7 @@
 
 ---
 ## Sprint timeline
-1st Sprint - Wednesday morning
+1st Sprint - Wednesday morning  
 2nd Sprint - Friday afternoon
 * Must prepare a 5-minutes presentation
 ---
@@ -50,3 +50,11 @@ User will first see the "Play", and "Option" buttons, along with an access to th
 When user clicks on the "Play" button, the user will see a display of a count
 
 ![game](Wireframes/game.png)
+
+---
+
+## Final Product
+
+![game](images/title.png)
+
+Some of the possible features were added. The game has two levels of difficulties. 
