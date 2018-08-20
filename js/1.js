@@ -128,6 +128,8 @@ $(function() {
         $(".score").html("");
         $(".disp").html("");
         $(".playerScore").html("");
+        $("#leaderboard").addClass("winbg");
+        clapping();
         clearInterval(timer);
       }
     }, 1000);
