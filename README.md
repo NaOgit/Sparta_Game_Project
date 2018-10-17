@@ -58,3 +58,5 @@ When user clicks on the "Play" button, the user will see a display of a count
 ![game](images/title.png)
 
 Some of the possible features were added. The game has two levels of difficulties. 
+
+https://naogit.github.io/Sparta_Game_Project/pages/1.html
